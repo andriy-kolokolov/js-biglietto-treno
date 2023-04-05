@@ -1,0 +1,7 @@
+.ms-container, .ms-travel-price-container {
+    background-color: lightgray;
+}
+
+#price-field {
+    height: 2rem;
+}
