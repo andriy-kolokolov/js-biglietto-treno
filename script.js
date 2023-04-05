@@ -20,19 +20,19 @@ else if (inputAge >= seniorAge) {
     window.alert("Your ticket price is: " + getTicketPriceSenior(inputKilometres) + " $");
 }
 
-function priceDefault() {
+function getTicketPriceDefault() {
     return inputKilometres * kilometrePrice;
 }
 
 function getTicketPriceJunior() {
-    return priceDefault() - priceDefault() * discountJunior;
+    return getTicketPriceDefault() - getTicketPriceDefault() * discountJunior;
 }
 
 function getTicketPriceAdult() {
-    return priceDefault();
+    return getTicketPriceDefault();
 }
 
 function getTicketPriceSenior() {
-    return priceDefault() - priceDefault() * discountSenior;
+    return getTicketPriceDefault() - getTicketPriceDefault() * discountSenior;
 }
 // END PROMPT SOLUTION
