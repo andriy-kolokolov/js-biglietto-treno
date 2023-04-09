@@ -1,7 +1,7 @@
-// PROMPT SOLUTION --------------------------------------------------------------------------------
-
-// const inputKilometres = prompt("What is your travel distance? : ");
-// const inputAge = prompt("Enter your age? : ");
+// // PROMPT SOLUTION --------------------------------------------------------------------------------
+//
+// const inputKilometres = parseInt(prompt("What is your travel distance? : "));
+// const inputAge = parseInt(prompt("Enter your age? : "));
 //
 // const kilometrePrice = 0.21;
 // const juniorAge = 17;
@@ -9,36 +9,22 @@
 // const discountJunior = 0.20; // 20%
 // const discountSenior = 0.40; // 40%
 //
-// if (inputAge <= juniorAge) {
-//     window.alert("Your ticket price is: " + getTicketPriceJunior(inputKilometres) + " $");
-// }
+// window.alert("Your ticket price is : " + getTravelPrice(inputAge, inputKilometres).toFixed(2) + " €")
 //
-// else if (inputAge > juniorAge && inputAge < seniorAge) {
-//     window.alert("Your ticket price is: " + getTicketPriceAdult(inputKilometres) + " $")
-// }
+// function getTravelPrice(age, distance) {
 //
-// else if (inputAge >= seniorAge) {
-//     window.alert("Your ticket price is: " + getTicketPriceSenior(inputKilometres) + " $");
-// }
+//     const defaultPrice = distance * kilometrePrice;
 //
-// function getTicketPriceDefault() {
-//     return inputKilometres * kilometrePrice;
+//     if (age <= juniorAge) {
+//         return defaultPrice - defaultPrice * discountJunior;
+//     } else if (age > juniorAge && age < seniorAge) {
+//         return defaultPrice;
+//     } else if (age >= seniorAge) {
+//         return defaultPrice - defaultPrice * discountSenior;
+//     }
 // }
-//
-// function getTicketPriceJunior() {
-//     return getTicketPriceDefault() - getTicketPriceDefault() * discountJunior;
-// }
-//
-// function getTicketPriceAdult() {
-//     return getTicketPriceDefault();
-// }
-//
-// function getTicketPriceSenior() {
-//     return getTicketPriceDefault() - getTicketPriceDefault() * discountSenior;
-// }
-
 // END PROMPT SOLUTION ---------------------------------------------------------------------
-
+//
 const kilometrePrice = 0.21;
 const juniorAge = 17;
 const seniorAge = 65;
@@ -50,8 +36,8 @@ const fieldPrice = document.getElementById("price-field");
 
 btnGetPrice.addEventListener("click", function (event){
     event.preventDefault();
-    const inputDistance = document.getElementById("input-travel-distance").value;
-    const inputAge = document.getElementById("input-age").value;
+    const inputDistance = parseInt(document.getElementById("input-travel-distance").value);
+    const inputAge = parseInt(document.getElementById("input-age").value);
     fieldPrice.innerText = getTravelPrice(inputAge, inputDistance).toFixed(2) + " €";
 })
 
